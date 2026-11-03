@@ -1,1 +1,86 @@
+internal class Program
+{
+    private static void Main(string[] args)
+    {
+
+        // One Dimensional Array :
+        int[] numbers = new int[] { 1, 2, 6 };
+
+        
+        // طريقة طباعة العناصر 1  
+        for (int i = 0; i < numbers.Length; i++)
+        {
+            Console.WriteLine(numbers[i]);
+        }
+
+
+        // طريقة طباعة العناصر 2 
+        foreach (var number in numbers )
+        {
+            Console.WriteLine(number);
+        }
+
+
+        // طريقة طباعة العناصر 3 
+        for (int i = 1; i <= numbers.Length; i++)
+        {
+            Console.WriteLine(numbers[i-1]);
+        }
+
+
+        // Tow Dimensional Array : 
+        int[,] matrix =
+        {
+            { 1, 2, 3 },
+            { 4, 5, 6 }
+        };
+
+        Console.WriteLine(matrix[0,1]);
+
+
+        //للطباعة عن طريق لوب : 
+         for (int i = 0;i < matrix.GetLength(0) ;i++)
+         {
+            Console.WriteLine(matrix[i, 0] + " " + matrix[i, 1] + " " + matrix[i, 2]);
+         }
+
+
+        // another way : 
+         var outerLoop = matrix.GetLength(0);
+         var innerLoop = matrix.GetLength(1);
+
+        // المرور على الصفوف
+        for (int i = 0; i < outerLoop; i++)
+        {
+            // المرور على الأعمدة لكل صف
+            for (int j = 0; j < innerLoop; j++)
+            {
+                // طباعة العنصر الحالي
+                Console.Write(matrix[i, j] + " ");
+            }
+            Console.WriteLine();
+        }
+
+        int[] num = new int[] { 1, 2, 3, 4 ,9,5,8 };
+
+        Console.WriteLine("original Array : " + string.Join(",", num));
+
+        Array.Reverse(num);
+        Console.WriteLine("original Array : " + string.Join(",", num));
+
+        Array.Sort(num);
+        Console.WriteLine("original Array : " + string.Join(",", num));
+
+        int index = Array.IndexOf(num, 8);
+        Console.WriteLine("indeix = " + index);
+
+        bool exists = Array.Exists(num, n => n > 5);
+        Console.WriteLine("Exists : " + exists);
+
+        bool exist = Array.Exists(num, s => s > 3547);
+        Console.WriteLine("Exists : " + exist);
+
+        //____________________________________________________________________________________
+    }
+}    
 
