@@ -1,11 +1,12 @@
 
         int[] original = new int[] { 10, 11, 12, 13, 19 };
-        int[] copy = original; // copy reference
+        int[] copy = original; // نسخ المرجع (Reference Copy)
 
         copy[2] = 90;
+        Console.WriteLine(original[2]); // النتيجة رح تكون 90 لأنهم بيأشروا على نفس المكان
 
-        Console.WriteLine(original[2]); //90
+        // --- النسخ الحقيقي الصحيح ---
+        int[] realCopy = new int[original.Length]; // أنشأنا مصفوفة جديدة بنفس الطول
+        Array.Copy(original, realCopy, original.Length); // نسخنا العناصر بداخلها
 
 
-        int[] realCopy = new int[original.Length];// حجمها نفس حجم الاوريجينال
-  
