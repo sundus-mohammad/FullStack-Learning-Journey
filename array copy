@@ -8,8 +8,4 @@
 
 
         int[] realCopy = new int[original.Length];// حجمها نفس حجم الاوريجينال
-        int[] realCopy = new int[original.Length+2];// اخذت نفس الحجم بس زدت عليه مكانين زيادة .. واذا سويت طباعه بطلعن صفر
-
-
-
-
+  
