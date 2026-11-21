@@ -1,0 +1,30 @@
+ public class Employee
+ {
+     public String Name { get; set; }
+     public decimal BasicSalary { get; set; }
+
+     public virtual decimal calculateSalary()
+     {
+         return BasicSalary;
+     }
+ }
+    public class Developer : Employee
+    {
+       public decimal TechnicalBonus { get; set; }
+
+        public override decimal calculateSalary()
+        {
+            return BasicSalary + TechnicalBonus;
+        }
+
+    }
+
+   internal class EmployeeSales : Employee
+   {
+       public decimal Commission { get; set; }
+
+       public override decimal calculateSalary()
+       {
+           return Commission + BasicSalary;
+       }
+   }
