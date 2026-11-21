@@ -36,7 +36,7 @@ internal class car: vehicle
         public double maxLoad { get; set; }
         public double Type { get; set; }
     }
-
+   
 
 // فايل بروغرام : 
    private static void Main (string[] args)
