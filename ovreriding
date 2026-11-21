@@ -1,0 +1,62 @@
+// الكلاس الاب : 
+
+ internal class vehicle
+ {
+     public string brand { get; set; }
+     public int year { get; set; } = 2015;
+     public virtual void start ()
+     {
+         Console.WriteLine("Vehicle started");
+     }
+
+     
+ }
+
+//الابن : 
+
+internal class car: vehicle
+    {
+        public int numberOfDoors { get; set; }
+
+
+        public override void start()
+        {
+
+            Console.WriteLine(" anyThing ");
+
+            base.start();
+        }
+    }
+}
+
+//الابن : 
+
+    internal class truck : vehicle
+    {
+        public double maxLoad { get; set; }
+        public double Type { get; set; }
+    }
+
+
+// فايل بروغرام : 
+   private static void Main (string[] args)
+   {
+       car c = new car();
+       c.brand = "BMW";
+       c.year = 2020;
+       c.numberOfDoors = 4;
+       Console.WriteLine( c.brand + " / " + c.year  + " / "  + c.numberOfDoors);
+   
+       truck t = new truck();
+       t.brand = "honda";
+       t.year = 2018;
+       t.maxLoad = 1000;
+       t.start();
+       Console.WriteLine(t.brand+" / "+t.year+ " / " + t.maxLoad);
+
+       c.start();
+   
+   
+   
+   }
+
